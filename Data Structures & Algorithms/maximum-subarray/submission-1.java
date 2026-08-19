@@ -1,0 +1,13 @@
+class Solution {
+    // dp[i...n] 以i结尾的子串最大和
+    public int maxSubArray(int[] nums) {
+        int n = nums.length;
+        int last = nums[0];
+        int res = nums[0];
+        for(int i = 1; i < n; i++) {
+            last = Math.max(last + nums[i], nums[i]);
+            res = Math.max(last, res);
+        }
+        return res;
+    }
+}
